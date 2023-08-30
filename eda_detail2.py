@@ -4,12 +4,11 @@ def convert_csv_values(input_file, output_file, column_name, value_mapping):
     # Load the CSV file
     df = pd.read_csv(input_file)
     
-    # Apply value mapping to the specified column
+    # 칼럼에 딕셔너리 key를 value로 변경하는 과정
     df[column_name] = df[column_name].replace(value_mapping)
     
-    # Save the transformed DataFrame to a new CSV file
+    # 새로운 CSV file로 저장
     df.to_csv(output_file, index=False, encoding='utf-8-sig')
-
 
 detail_list = {
     'David De Gea': 'David de Gea',
@@ -40,9 +39,8 @@ detail_list = {
     'Jared Bowen': 'Jarrod Bowen',
     'Vitaliy Mykolenko': 'Vitalii Mykolenko'
                 }
-# Specify input and output file paths
+# input and output 파일 경로
 input_file_path = "C:/Users/LEGION/Downloads/EDA 프로젝트/salary_all.csv"
 output_file_path = "C:/Users/LEGION/Downloads/EDA 프로젝트/salary_all0.csv"
 
-# Call the function to convert values and save the result
 convert_csv_values(input_file_path, output_file_path, "Name", detail_list)
