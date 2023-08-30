@@ -1,7 +1,7 @@
 import requests
 import json
 import csv
-
+# 각 시즌별로 비패턴 코드로 되어 있어서 딕셔너리고 정리를 했습니다.
 season = {2022:20934,2021:19793,2020:18685,2019:17590,2018:16368,2017:15151,2016:13796,2015:12496,2014:9155}
 
 def crawl_defensive(season,num):

@@ -1,19 +1,19 @@
 import pandas as pd
 
 def no_convert(num,nam):
-    # Read the CSV file
+    # CSV파일 읽기
     csv_path = 'C:/Users/LEGION/Downloads/understat_all.csv'
     df = pd.read_csv(csv_path)
 
     for i in range(0,len(df[df['No'] == num])):
-        # Find the row with 'No' column value of 
+        # 'No'칼럼에서 원하는 번호 찾기
         row_index = df[df['No'] == num].index[i]
 
-        # Update the 'Name' column value
+        # 새로운 값으로 바꿔주기
         new_name = nam
         df.at[row_index, 'Player'] = new_name
 
-    # Save the modified DataFrame to a new CSV file
+    # CSV 파일 수정해서 위에 덮어쓰기
     df.to_csv(csv_path, index=False, encoding='utf-8-sig')
 
     print(df[df['No'] == num])

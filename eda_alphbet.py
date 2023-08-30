@@ -97,15 +97,15 @@ def alphbet_convert(season):
     file_path = fr"C:\Users\LEGION\Downloads\EDA 프로젝트\1차 자료\1xbet_offensive\1xbet_offensive_{season}.csv"
     file_name = pd.read_csv(file_path)
 
-    # Translate the "Name" column
+    # 딕셔너리로 정리해 놓은 수많은 언어의 알파벳이 발견되면 영어 알파벳으로 교체됩니다.
     for index, row in file_name.iterrows():
         name_en = trans_and_convert(row["Name"])
         file_name.at[index, "Name"] = name_en
-    # Save the translated DataFrame
+    # 데이터를 다른 이름으로 다시 저장해 줍니다.
     translated_file_path = fr"C:\Users\LEGION\Downloads\1xbet_offensive_{season}_edited.csv"
     file_name.to_csv(translated_file_path, index=False, encoding='utf-8-sig')
 
-# Call the rename function for each year in the years_range
+# 딕셔너리 범위로 for문을 돌려줍니다.
 
 for year in years_range:
     alphbet_convert(year)
