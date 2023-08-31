@@ -15,7 +15,7 @@ def no_convert(num,nam):
 
     # CSV 파일 수정해서 위에 덮어쓰기
     df.to_csv(csv_path, index=False, encoding='utf-8-sig')
-
+    # 수정 잘 되었는지 확인
     print(df[df['No'] == num])
 
 no_list = {493:'Gabriel Paulista',5613:'Gabriel Magalhaes',7430:'Emerson Royal',}
