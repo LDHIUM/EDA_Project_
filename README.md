@@ -55,3 +55,6 @@ pip install <라이브러리>
 - xGBuildup90 : 90분당 xG Buildup값
 ## Credit
 - @LDHIUM
+- @sajacaros
+- @LEEINSEO-0118
+- @dhkwon1984
